@@ -1,5 +1,5 @@
 {
-    "name": "AGPAYTECH-Programming-Universe/PHP-Eureka-Server",
+    "name": "apu/php-eureka-server",
     "description": "A PHP client for Spring Cloud Eureka discovery server.",
     "keywords": [
         "php",
