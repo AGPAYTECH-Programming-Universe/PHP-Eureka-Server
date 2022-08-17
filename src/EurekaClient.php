@@ -37,8 +37,8 @@ class EurekaClient {
         $response = $client->request('POST', '/eureka/apps/' . $this->config->getAppName(), [
             'headers' => [
                 'Content-Type' => 'application/json',
-                'Accept' => 'application/json'
-            ],
+                'Accept' => 'application/json',
+            ] + $this->config->getAdditionalHeaders(),
             'body' => json_encode($config)
         ]);
 
@@ -56,7 +56,7 @@ class EurekaClient {
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json'
-                ]
+                ] + $this->config->getAdditionalHeaders()
             ]);
             $statusCode = $response->getStatusCode();
         } catch (Exception $ex) {
@@ -75,7 +75,7 @@ class EurekaClient {
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json'
-            ]
+            ] + $this->config->getAdditionalHeaders()
         ]);
 
         if($response->getStatusCode() != 200) {
@@ -93,7 +93,7 @@ class EurekaClient {
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json'
-                ]
+                ] + $this->config->getAdditionalHeaders()
             ]);
 
             if($response->getStatusCode() != 200) {
@@ -138,7 +138,7 @@ class EurekaClient {
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json'
-                ]
+                ] + $this->config->getAdditionalHeaders()
             ]);
 
             if($response->getStatusCode() != 200) {

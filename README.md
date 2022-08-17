@@ -7,7 +7,7 @@ A PHP client for (Spring Cloud) Netflix Eureka service registration and discover
 You can install this package using [Composer](https://getcomposer.org/
 ):
 
-`composer require "piwvh/php-eureka"`
+
 
 ## Documentation
 

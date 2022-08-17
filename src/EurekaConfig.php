@@ -23,6 +23,7 @@ class EurekaConfig {
     private $healthCheckUrl;
     private $vipAddress;
     private $secureVipAddress;
+    private $additionalHeaders = [];
 
     private $heartbeatInterval = 30;
 
@@ -132,6 +133,10 @@ class EurekaConfig {
         return $this->instanceProvider;
     }
 
+    public function getAdditionalHeaders() {
+        return $this->additionalHeaders;
+    }
+
     // setters
     public function setEurekaDefaultUrl($eurekaDefaultUrl) {
         $this->eurekaDefaultUrl = $eurekaDefaultUrl;
@@ -203,6 +208,10 @@ class EurekaConfig {
 
     public function setInstanceProvider(InstanceProvider $instanceProvider) {
         $this->instanceProvider = $instanceProvider;
+    }
+
+    public function setAdditionalHeaders(array $additionalHeaders) {
+        $this->additionalHeaders = $additionalHeaders;
     }
 
     //
