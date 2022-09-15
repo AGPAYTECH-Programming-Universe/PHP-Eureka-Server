@@ -7,7 +7,7 @@ A PHP client for (Spring Cloud) Netflix Eureka service registration and discover
 You can install this package using [Composer](https://getcomposer.org/
 ):
 
-
+`composer require apu/php-eureka-server`
 
 ## Documentation
 
@@ -23,6 +23,7 @@ $client = new EurekaClient([
     'homePageUrl' => 'http://localhost:8080',
     'statusPageUrl' => 'http://localhost:8080/info',
     'healthCheckUrl' => 'http://localhost:8080/health'
+    'additionalHeaders' = [],
 ]);
 ```
 
@@ -46,6 +47,7 @@ List of all available configuration are as follows:
 - `heartbeatInterval` (default: `30`)
 - `discoveryStrategy` (default: `RandomStrategy`)
 - `instanceProvider`
+- `additionalHeaders`
 
 
 You can also change the configuration after creating `EurekaClient` instance, using setter methods:
